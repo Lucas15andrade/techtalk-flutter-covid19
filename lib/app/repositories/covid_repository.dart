@@ -1,12 +1,13 @@
 import 'package:covid19/app/models/covid_state.dart';
 import 'package:dio/dio.dart';
+import 'package:mobx/mobx.dart';
 
 class CovidRepository {
   final Dio _dio;
 
   CovidRepository(this._dio);
 
-  Future<List<CovidState>> fetch() async {
+  Future<ObservableList<CovidState>> fetch() async {
     try {
       List<CovidState> listaCovid = [];
 
@@ -17,7 +18,7 @@ class CovidRepository {
         listaCovid.add(covid);
       }
 
-      return listaCovid;
+      return listaCovid.asObservable();
     } catch (e) {
       return null;
     }

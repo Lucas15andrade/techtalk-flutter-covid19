@@ -12,14 +12,14 @@ mixin _$HomeController on _HomeControllerBase, Store {
   final _$listCovidAtom = Atom(name: '_HomeControllerBase.listCovid');
 
   @override
-  List<CovidState> get listCovid {
+  ObservableList<CovidState> get listCovid {
     _$listCovidAtom.context.enforceReadPolicy(_$listCovidAtom);
     _$listCovidAtom.reportObserved();
     return super.listCovid;
   }
 
   @override
-  set listCovid(List<CovidState> value) {
+  set listCovid(ObservableList<CovidState> value) {
     _$listCovidAtom.context.conditionallyRunInAction(() {
       super.listCovid = value;
       _$listCovidAtom.reportChanged();
@@ -31,6 +31,19 @@ mixin _$HomeController on _HomeControllerBase, Store {
   @override
   Future<dynamic> load() {
     return _$loadAsyncAction.run(() => super.load());
+  }
+
+  final _$_HomeControllerBaseActionController =
+      ActionController(name: '_HomeControllerBase');
+
+  @override
+  void adicionar() {
+    final _$actionInfo = _$_HomeControllerBaseActionController.startAction();
+    try {
+      return super.adicionar();
+    } finally {
+      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
   }
 
   @override

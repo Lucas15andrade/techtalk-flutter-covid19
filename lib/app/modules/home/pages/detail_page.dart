@@ -26,7 +26,8 @@ class _DetailPageState extends State<DetailPage> {
               children: <Widget>[
                 Container(
                   height: 150,
-                  margin: EdgeInsets.only(bottom: 20, top: 50, left: 0),
+                  width: double.infinity,
+                  margin: EdgeInsets.only(bottom: 20, top: 50, left: 20, right: 20),
                   padding: EdgeInsets.all(25.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
@@ -41,6 +42,7 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.only(left: 10),

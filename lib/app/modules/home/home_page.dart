@@ -22,6 +22,13 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _homeController.adicionar();
+          },
+          backgroundColor: Colors.red,
+          child: Icon(Icons.add),
+        ),
         body: Observer(builder: (_) {
           if (_homeController.listCovid != null) {
             return RefreshIndicator(
